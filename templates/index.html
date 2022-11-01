@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.esm.js" integrity="sha512-59oaQE+Oz94NSelkRzYEkfwlKDjUj7IWGPlZQJwWtHjbkYxwjnVgwDV3mCn/Vg6CiLUVcdjZO+Kta2bjVemV3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.esm.min.js" integrity="sha512-wp1TmWHEmHgERMuWw8Q0tCwFbZab0o6MjMS/HceqShRObCHzIfTrZfjpMm1bTuqIVrQXd9SRhYt0V9hObySU/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js" integrity="sha512-d6nObkPJgV791iTGuBoVC9Aa2iecqzJRE0Jiqvk85BhLHAPhWqkuBiQb1xz2jvuHNqHLYoN3ymPfpiB1o+Zgpw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/helpers.esm.min.js" integrity="sha512-SFaZeQpMkYy2mMnrH53KqmTt13JaAZfhFO3J/R5RhiOg6EXRbl4UJWSjPulMnhwaLELHrAl40WN9XwjPJHpjqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/helpers.esm.js" integrity="sha512-k1l60wcqxrkxs0F9M/sCgvBepWeLTIyc1Od+wN5tC0VhsLgksryon9jdB73d9CXi2E5bJA1wxl4CuPsRDWwadw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body style="margin: 0;">
+    <div class="main" id="section1">
+      <div class='cristalBall'>
+        <div class='cristal'>
+          <div class='ball'>
+            <h1 align="center">การหาใจความสำคัญของข้อความ</h1>
+            <form id="form" align="center">
+              <textarea
+                id="textarea"
+                name="textarea"
+                rows="7"
+                cols="100"
+                style="width: 80%; max-width: 80%;font-size: 18px;"
+                ;></textarea>
+              
+              <button type="submit"  onclick="scrollDown()" id="submit" class="more fa
+                fa-chevron-down"></button>
+            </form>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class='background'>
+        <div class='circle'>
+          <div class='circle1'>
+            <div class='circle2'>
+
+              <div class='circle3'>
+                <!--         <div class='star'>Hire</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="main" id="section2" style="margin: 20%;font-size: 40px;">
+                <!--  -->
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <table id="example4"   style="margin-left: -17%;float: left;border-spacing: 15px;border-collapse: separate;"></table>
+              </div>
+              <div class="col-sm-6">
+                <br>
+                <br>
+                <br>
+                <br>
+                <canvas id="myChart" style="width:70%;"></canvas>
+              </div>
+            </div>
+          </div>
+              <!--  -->
+          
+        
+            
+       
+          <br>
+            <div id="output2" >
+              <h1>สรุปข้อความ</h1>
+            </div>
+          <br><br>
+        
+    </div>
+
+    <script type=text/javascript src="{{url_for('static',filename='js/main.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{
+      url_for('static',filename='css/css.css') }}">
+  </body>
+  <script>
+    var xchart = []
+    var ychart = []
+    $("#output").hide();
+    $(document).ready(function () {
+      $("#form").on("submit", function (e) {
+        $.ajax({
+          data: {
+            text: $("#textarea").val(),
+          },
+          type: "POST",
+          url: "/",
+        }).done(function (data) {
+          var tt = $("#textarea").val();
+          var sum=`<h1 align="center">สรุปข้อความ</h1>
+          ${data.sum}`
+          // if (tt != "") $("#output2").html(data.sum).show();
+          // if (tt != "") $("#output").html(data.tf).show();
+          var myTable =
+            '<table class="table-fill">' +
+            "<thead>" +
+            "<tr>" +
+            '<th class="text-left">Keywords</th>' +
+            '<th class="text-left">%(Words)</th>' +
+            "</tr>" +
+            "</thead>" +
+            '<tbody class="table-hover">';
+          
+          for (var i = 0; i < 10; i++) {
+            xchart.push(data.tf[i][0])
+            ychart.push(data.tf[i][1])
+            myTable += `<tr>
+              <td class="text-left">${data.tf[i][0]}</td>
+              <td class="text-left">${data.tf[i][1]}</td>
+              </tr>`;
+          }
+          ("</tbody>");
+          document.getElementById("example4").innerHTML = myTable;
+          document.getElementById("output2").innerHTML = sum;
+          console.log(xchart);
+          chartgg()
+          // chart
+   
+          // end chart
+        });
+        e.preventDefault();
+      });
+    });
+  </script>
+  <script>
+function chartgg(){
+    var xValues = xchart
+    var yValues = ychart
+    var barColors = []
+    xValues.forEach((value, index, array) => {
+        barColors.push(randomColor())
+    })
+
+    // console.log(">>"+xValues+"<<"); 
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: [
+            'rgba(230, 176, 170)',
+            'rgba(215, 189, 226)',
+            'rgba(169, 204, 227)',
+            'rgba(163, 228, 215 )',
+            'rgba(169, 223, 191)',
+            'rgba(249, 231, 159)',
+            'rgba(245, 203, 167 )',
+            'rgba(247, 249, 249 )',
+            'rgba(213, 219, 219  )',
+            'rgba(174, 182, 191 )',
+          ],borderColor: [
+          'rgb(169, 50, 38)',
+          'rgb(136, 78, 160)',
+          'rgb(36, 113, 163)',
+          'rgb(23, 165, 137)',
+          'rgb(34, 153, 84)',
+          'rgb(212, 172, 13)',
+          'rgb(202, 111, 30)',
+          'rgb(208, 211, 212 )',
+          'rgb(131, 145, 146)',
+          'rgb(46, 64, 83)',
+        ],
+        borderWidth: 1,
+            data: yValues
+          }],
+
+        },
+        options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels:{
+                    font: {
+                        size: 16,
+                        family: 'Inconsolata'
+                    }
+                }
+              },
+              title: {
+                display: true,
+                text: 'popular website ',
+                font:{
+                    size:30,
+                    family: 'Inconsolata',
+                }
+                
+              }
+            }
+          },
+      });
+    }
+  </script>
+
+ </html>
